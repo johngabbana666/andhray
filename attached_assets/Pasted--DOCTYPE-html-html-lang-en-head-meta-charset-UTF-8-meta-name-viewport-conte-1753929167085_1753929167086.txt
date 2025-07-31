@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANDHRAY | Official Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --red: #ff3c38;
+      --orange: #ff9f1c;
+      --yellow: #ffcc00;
+      --white: #ffffff;
+      --dark: #0d0d0d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--yellow);
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .bio img {
+      width: 180px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .cards, .gallery, .timeline, .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card, .photo, .video, .event, .milestone {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .card img, .photo img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    button {
+      background: var(--yellow);
+      color: black;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .socials i {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      color: var(--white);
+      transition: transform 0.3s ease;
+    }
+
+    .socials i:hover {
+      transform: scale(1.2);
+      color: var(--yellow);
+    }
+
+    .languages {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background: #111;
+      padding: 2rem;
+      text-align: center;
+      color: var(--yellow);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ANDHRAY</h1>
+    <p>Techno | Industrial | Experimental</p>
+  </header>
+
+  <section class="bio" style="text-align:center">
+    <h2>Biography</h2>
+    <img src="https://via.placeholder.com/180" alt="Artist Photo" />
+    <p>ANDHRAY is a visionary producer shaping the soundscape of industrial techno. Her performances electrify stages across the world with raw energy and hypnotic rhythm.</p>
+  </section>
+
+  <section>
+    <h2>Upcoming Releases</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Release Cover" />
+        <h3>“Rituals” EP</h3>
+        <p>Release Date: Sept 20, 2025</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Release Cover" />
+        <h3>“Frequencies” Single</h3>
+        <p>Release Date: Oct 11, 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured Videos</h2>
+    <div class="gallery">
+      <div class="video">
+        <iframe height="200" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="photo">
+        <img src="https://via.placeholder.com/300x200" alt="Photo 1" />
+        <a href="#" download><button>Download</button></a>
+      </div>
+<div class="photo">
+        <img src="https://via.placeholder.com/300x200" alt="Photo 2" />
+        <a href="#" download><button>Download</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <div class="event">
+      <h3>Berlin Club Night</h3>
+      <p>Oct 28, 2025 – Berghain</p>
+      <a href="#"><button>Book Now</button></a>
+    </div>
+    <div class="event">
+      <h3>Paris Techno Rave</h3>
+      <p>Nov 11, 2025 – Concrete</p>
+      <a href="#"><button>Book Now</button></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Industrial Girls Records</h2>
+    <p>ANDHRAY is a leading figure in Industrial Girls Records – a label empowering experimental techno artists. Explore our catalog, projects, and collaborations.</p>
+  </section>
+
+  <section>
+    <h2>Request Booking</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="date" required />
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Booking details or message..." rows="4"></textarea>
+      </div>
+      <button type="submit">Send Booking Request</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Milestones</h2>
+    <div class="timeline">
+      <div class="milestone">2021 – Debut EP “Raw Pulse” released</div>
+      <div class="milestone">2022 – Performed at ADE Festival</div>
+      <div class="milestone">2023 – Founded Industrial Girls Records</div>
+      <div class="milestone">2024 – World Tour: 15 countries</div>
+    </div>
+  </section>
+
+  <section class="languages">
+    <h3>Select Language</h3>
+    <select>
+      <option>English</option>
+      <option>Español</option>
+      <option>Français</option>
+      <option>Deutsch</option>
+      <option>Português</option>
+      <option>日本語</option>
+    </select>
+  </section>
+
+  <footer>
+    <h3>Connect with ANDHRAY</h3>
+    <div class="socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-soundcloud"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>©️ 2025 ANDHRAY. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

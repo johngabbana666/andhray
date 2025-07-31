@@ -1,0 +1,2288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANDHRAY - Industrial Techno Artist, Producer, and Founder of Industrial Girls Records">
+  <meta name="keywords" content="ANDHRAY, techno, industrial, electronic music, DJ, producer, Industrial Girls Records">
+  <meta name="author" content="ANDHRAY">
+  <title>ANDHRAY | Industrial Techno Artist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --red: #E53935;
+      --orange: #FB8C00;
+      --yellow: #FDD835;
+      --white: #FFFFFF;
+      --dark: #0d0d0d;
+      --gray: #1a1a1a;
+      --light-gray: #2d2d2d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Language Switcher */
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(13, 13, 13, 0.9);
+      padding: 10px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .language-select {
+      background: var(--gray);
+      color: var(--white);
+      border: 2px solid var(--orange);
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .edit-toggle {
+      background: var(--yellow);
+      color: var(--dark);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .edit-toggle:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+    
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: color 0.3s ease;
+    }
+    
+    .back-to-top:hover {
+      color: var(--orange);
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 50%, var(--dark) 100%);
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 12vw, 10rem);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, var(--white), var(--orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1rem, 3vw, 2rem);
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+    
+    .hero-nav {
+      position: absolute;
+      bottom: 50px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .hero-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 15px 30px;
+      border: 2px solid var(--orange);
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+    
+    .hero-link:hover {
+      background: var(--orange);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: 60px;
+      color: var(--white);
+    }
+    
+    /* Biography Section */
+    .bio {
+      background: var(--gray);
+    }
+    
+    .bio-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .bio-image {
+      width: 100%;
+      max-width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    .bio-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--white);
+    }
+    
+    /* News Grid */
+    .news-grid {
+      display: grid;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .news-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      background: var(--gray);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .news-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .news-banner, .news-video {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border: none;
+    }
+    
+    .news-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding: 40px 30px 30px;
+      color: var(--white);
+    }
+    
+    .news-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .news-link {
+      display: inline-block;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+    
+    .news-link:hover {
+      color: var(--yellow);
+    }
+    
+    /* Releases Section */
+    .releases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .release-card {
+      background: var(--gray);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .release-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .release-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .release-info {
+      padding: 20px;
+    }
+    
+    .release-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    
+    .release-date {
+      color: var(--orange);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      background: var(--gray);
+      aspect-ratio: 1;
+    }
+    
+    .gallery-image, .gallery-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-image,
+    .gallery-item:hover .gallery-video {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .download-btn {
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      background: var(--yellow);
+      color: var(--dark);
+    }
+    
+    /* Events Section */
+    .events {
+      background: var(--gray);
+    }
+    
+    .events-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .event-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      background: var(--dark);
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border-left: 5px solid var(--orange);
+      transition: all 0.3s ease;
+    }
+    
+    .event-item:hover {
+      transform: translateX(10px);
+      background: var(--light-gray);
+    }
+    
+    .event-info h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    
+    .event-date {
+      color: var(--orange);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+    
+    .event-location {
+      color: var(--white);
+      opacity: 0.8;
+    }
+    
+    .event-actions {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border: 2px solid var(--orange);
+      background: transparent;
+      color: var(--orange);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .btn:hover {
+      background: var(--orange);
+      color: var(--dark);
+    }
+    
+    .btn-primary {
+      background: var(--orange);
+      color: var(--dark);
+    }
+    
+    .btn-primary:hover {
+      background: var(--yellow);
+    }
+    
+    /* Industrial Girls Section */
+    .industrial-girls {
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: var(--white);
+    }
+    
+    .industrial-content {
+      text-align: center;
+    }
+    
+    .industrial-logo {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .industrial-description {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .industrial-projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .project-card {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Milestones */
+    .milestones-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .milestones-timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--orange);
+    }
+    
+    .milestone-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 40px;
+    }
+    
+    .milestone-year {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background: var(--orange);
+      color: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    
+    .milestone-text {
+      background: var(--gray);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    /* Booking Form */
+    .booking-form {
+      background: var(--gray);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--light-gray);
+      border-radius: 5px;
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    /* Social Media */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--gray);
+      color: var(--white);
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--orange);
+      color: var(--dark);
+      transform: translateY(-5px);
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--gray);
+      padding: 60px 0 30px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      margin-bottom: 30px;
+    }
+    
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--orange);
+    }
+    
+    .copyright {
+      color: var(--white);
+      opacity: 0.7;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--light-gray);
+    }
+    
+    /* Edit Mode */
+    .edit-mode .editable {
+      border: 2px dashed var(--orange);
+      position: relative;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    
+    .edit-mode .editable:hover {
+      background: rgba(251, 140, 0, 0.1);
+    }
+    
+    .edit-indicator {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: var(--orange);
+      color: var(--dark);
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: none;
+      text-transform: uppercase;
+    }
+    
+    .edit-mode .edit-indicator {
+      display: block;
+    }
+
+    /* Clean layout improvements */
+    .edit-only {
+      display: none;
+      margin: 15px 0;
+      clear: both;
+    }
+
+    .edit-mode .edit-only {
+      display: inline-block;
+    }
+
+    /* Prevent overlapping elements */
+    .news-item,
+    .release-card,
+    .gallery-item,
+    .event-item {
+      position: relative;
+      overflow: visible;
+    }
+
+    /* Better button positioning in edit mode */
+    .news-item button,
+    .release-card button,
+    .gallery-item button,
+    .event-item button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 15;
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .news-item button:hover,
+    .release-card button:hover,
+    .gallery-item button:hover,
+    .event-item button:hover {
+      background: var(--orange);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* Improve spacing between sections */
+    .section {
+      padding: 120px 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Better grid spacing */
+    .news-grid,
+    .releases-grid,
+    .gallery-grid {
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    /* Ensure proper spacing for all interactive elements */
+    .btn {
+      margin: 10px 5px;
+      display: inline-block;
+    }
+
+    /* Fix social media layout */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin: 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      flex-shrink: 0;
+    }
+    
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    .modal-content {
+      background-color: var(--gray);
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      color: white;
+      border: 2px solid var(--orange);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .modal h3 {
+      color: var(--orange);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+    }
+    
+    .close:hover {
+      color: var(--orange);
+    }
+    
+    /* Admin Panel */
+    .admin-panel {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 350px;
+      height: 100vh;
+      background: var(--gray);
+      padding: 20px;
+      transition: right 0.3s ease;
+      z-index: 1500;
+      overflow-y: auto;
+      border-left: 2px solid var(--orange);
+    }
+    
+    .admin-panel.open {
+      right: 0;
+    }
+    
+    .admin-panel h3 {
+      color: var(--orange);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .admin-panel .btn {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .language-switcher {
+        top: 10px;
+        right: 10px;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px;
+      }
+      
+      .back-to-top {
+        top: 10px;
+        left: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+      
+      .hero-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+      }
+      
+      .hero-link {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .bio-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+      
+      .social-links {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      
+      .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+      
+      .admin-panel {
+        width: 100%;
+        right: -100%;
+      }
+      
+      .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 20px;
+      }
+      
+      /* Fix overlapping elements on mobile */
+      .section {
+        padding: 80px 0;
+      }
+      
+      .edit-indicator {
+        font-size: 0.6rem;
+        padding: 3px 6px;
+        top: -12px;
+        right: -12px;
+      }
+      
+      .news-item button,
+      .release-card button,
+      .gallery-item button,
+      .event-item button {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+        top: 8px;
+        right: 8px;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+      
+      .releases-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      
+      .events-list {
+        padding: 0 10px;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 6rem);
+      }
+      
+      .hero-subtitle {
+        font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+      }
+      
+      .section-title {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+      }
+      
+      .language-switcher {
+        top: 5px;
+        right: 5px;
+        padding: 6px;
+      }
+      
+      .back-to-top {
+        top: 5px;
+        left: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+      
+      .news-grid,
+      .releases-grid,
+      .gallery-grid {
+        gap: 15px;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .event-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      
+      .event-actions {
+        justify-content: center;
+      }
+      
+      .social-links {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      
+      .releases-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      
+      .industrial-projects {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    /* Hide/Show Elements */
+    .hidden {
+      display: none;
+    }
+    
+    .edit-only {
+      display: none;
+    }
+    
+    .edit-mode .edit-only {
+      display: block;
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Language Switcher & Edit Toggle -->
+  <div class="language-switcher">
+    <select class="language-select" id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="de">Deutsch</option>
+      <option value="pt">Português</option>
+      <option value="zh">中文</option>
+    </select>
+    <button class="edit-toggle" onclick="toggleEditMode()" data-en="Edit" data-es="Editar" data-it="Modifica" data-de="Bearbeiten" data-pt="Editar" data-zh="编辑">Edit</button>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1 class="editable" data-field="artist-name" onclick="editText(this)" data-en="ANDHRAY" data-es="ANDHRAY" data-it="ANDHRAY" data-de="ANDHRAY" data-pt="ANDHRAY" data-zh="ANDHRAY">ANDHRAY</h1>
+    <div class="hero-subtitle editable" data-field="artist-genre" onclick="editText(this)" data-en="Industrial Techno | Electronic Producer" data-es="Techno Industrial | Productora Electrónica" data-it="Techno Industriale | Produttrice Elettronica" data-de="Industrial Techno | Elektronische Produzentin" data-pt="Techno Industrial | Produtora Eletrônica" data-zh="工业电子 | 电子音乐制作人">Industrial Techno | Electronic Producer</div>
+    <div class="hero-nav">
+      <a href="#industrial-girls" class="hero-link editable" data-field="nav-label" onclick="editText(this)" data-en="Industrial Girls" data-es="Industrial Girls" data-it="Industrial Girls" data-de="Industrial Girls" data-pt="Industrial Girls" data-zh="Industrial Girls">Industrial Girls</a>
+      <a href="#music" class="hero-link" data-en="Music" data-es="Música" data-it="Musica" data-de="Musik" data-pt="Música" data-zh="音乐">Music</a>
+      <a href="#events" class="hero-link" data-en="Events" data-es="Eventos" data-it="Eventi" data-de="Veranstaltungen" data-pt="Eventos" data-zh="活动">Events</a>
+      <a href="#booking" class="hero-link" data-en="Booking" data-es="Reservas" data-it="Prenotazioni" data-de="Buchung" data-pt="Reservas" data-zh="预订">Booking</a>
+    </div>
+    <div class="edit-indicator">Click to edit</div>
+  </section>
+
+  <!-- Biography Section -->
+  <section class="section bio" id="bio">
+    <div class="container">
+      <h2 class="section-title" data-en="Biography" data-es="Biografía" data-it="Biografia" data-de="Biografie" data-pt="Biografia" data-zh="传记">Biography</h2>
+      <div class="bio-content">
+        <img src="https://via.placeholder.com/400x400/1a1a1a/FB8C00?text=ANDHRAY" alt="ANDHRAY" class="bio-image editable" data-field="bio-image" onclick="editImage(this)">
+        <div class="bio-text editable" data-field="bio-text" onclick="editText(this)" 
+             data-en="ANDHRAY is a visionary industrial techno artist and producer who has been shaping the underground electronic music scene with her powerful, hypnotic soundscapes. As the founder of Industrial Girls Records, she champions experimental artists and pushes the boundaries of electronic music. Her performances are known for their raw energy and immersive atmosphere, captivating audiences across major festivals and clubs worldwide."
+             data-es="ANDHRAY es una artista visionaria de techno industrial y productora que ha estado moldeando la escena de música electrónica underground con sus paisajes sonoros poderosos e hipnóticos. Como fundadora de Industrial Girls Records, defiende a artistas experimentales y empuja los límites de la música electrónica. Sus actuaciones son conocidas por su energía cruda y atmósfera inmersiva, cautivando audiencias en festivales y clubes importantes en todo el mundo."
+             data-it="ANDHRAY è un'artista visionaria di techno industriale e produttrice che ha plasmato la scena musicale elettronica underground con i suoi paesaggi sonori potenti e ipnotici. Come fondatrice di Industrial Girls Records, sostiene artisti sperimentali e spinge i confini della musica elettronica. Le sue performance sono note per la loro energia grezza e atmosfera coinvolgente, affascinando il pubblico nei principali festival e club di tutto il mondo."
+             data-de="ANDHRAY ist eine visionäre Industrial-Techno-Künstlerin und Produzentin, die die Underground-Electronic-Music-Szene mit ihren kraftvollen, hypnotischen Klanglandschaften prägt. Als Gründerin von Industrial Girls Records unterstützt sie experimentelle Künstler und erweitert die Grenzen der elektronischen Musik. Ihre Auftritte sind bekannt für ihre rohe Energie und immersive Atmosphäre, die Publikum auf großen Festivals und Clubs weltweit fesselt."
+             data-pt="ANDHRAY é uma artista visionária de techno industrial e produtora que tem moldado a cena de música eletrônica underground com suas paisagens sonoras poderosas e hipnóticas. Como fundadora da Industrial Girls Records, ela defende artistas experimentais e empurra os limites da música eletrônica. Suas performances são conhecidas por sua energia crua e atmosfera imersiva, cativando audiências em grandes festivais e clubes mundialmente."
+             data-zh="ANDHRAY是一位具有远见的工业电子音乐艺术家和制作人，她用强有力的催眠音景塑造着地下电子音乐场景。作为Industrial Girls Records的创始人，她支持实验性艺术家并推动电子音乐的边界。她的表演以原始的能量和沉浸式氛围而闻名，在世界各地的主要音乐节和俱乐部中吸引观众。">
+          ANDHRAY is a visionary industrial techno artist and producer who has been shaping the underground electronic music scene with her powerful, hypnotic soundscapes. As the founder of Industrial Girls Records, she champions experimental artists and pushes the boundaries of electronic music. Her performances are known for their raw energy and immersive atmosphere, captivating audiences across major festivals and clubs worldwide.
+        </div>
+        <div class="edit-indicator">Click to edit</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="section" id="news">
+    <div class="container">
+      <h2 class="section-title" data-en="Latest News" data-es="Últimas Noticias" data-it="Ultime Notizie" data-de="Neueste Nachrichten" data-pt="Últimas Notícias" data-zh="最新消息">Latest News</h2>
+      <button class="btn edit-only" onclick="addNews()" data-en="Add News Item" data-es="Agregar Noticia" data-it="Aggiungi Notizia" data-de="Nachricht hinzufügen" data-pt="Adicionar Notícia" data-zh="添加新闻">Add News Item</button>
+      <div class="news-grid" id="newsGrid">
+        <!-- News items will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Releases Section -->
+  <section class="section" id="music">
+    <div class="container">
+      <h2 class="section-title" data-en="Upcoming Releases" data-es="Próximos Lanzamientos" data-it="Prossime Uscite" data-de="Kommende Veröffentlichungen" data-pt="Próximos Lançamentos" data-zh="即将发布">Upcoming Releases</h2>
+      <button class="btn edit-only" onclick="addRelease()" data-en="Add Release" data-es="Agregar Lanzamiento" data-it="Aggiungi Uscita" data-de="Veröffentlichung hinzufügen" data-pt="Adicionar Lançamento" data-zh="添加发布">Add Release</button>
+      <div class="releases-grid" id="releasesGrid">
+        <!-- Releases will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="section-title" data-en="Gallery" data-es="Galería" data-it="Galleria" data-de="Galerie" data-pt="Galeria" data-zh="画廊">Gallery</h2>
+      <button class="btn edit-only" onclick="addGalleryItem()" data-en="Add Gallery Item" data-es="Agregar Item de Galería" data-it="Aggiungi Elemento Galleria" data-de="Galerie-Element hinzufügen" data-pt="Adicionar Item da Galeria" data-zh="添加画廊项目">Add Gallery Item</button>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Gallery items will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="section events" id="events">
+    <div class="container">
+      <h2 class="section-title" data-en="Upcoming Events" data-es="Próximos Eventos" data-it="Prossimi Eventi" data-de="Kommende Veranstaltungen" data-pt="Próximos Eventos" data-zh="即将举行的活动">Upcoming Events</h2>
+      <button class="btn edit-only" onclick="addEvent()" data-en="Add Event" data-es="Agregar Evento" data-it="Aggiungi Evento" data-de="Veranstaltung hinzufügen" data-pt="Adicionar Evento" data-zh="添加活动">Add Event</button>
+      <div class="events-list" id="eventsList">
+        <!-- Events will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Industrial Girls Section -->
+  <section class="section industrial-girls" id="industrial-girls">
+    <div class="container">
+      <div class="industrial-content">
+        <div class="industrial-logo editable" data-field="industrial-title" onclick="editText(this)" data-en="Industrial Girls Records" data-es="Industrial Girls Records" data-it="Industrial Girls Records" data-de="Industrial Girls Records" data-pt="Industrial Girls Records" data-zh="Industrial Girls Records">Industrial Girls Records</div>
+        <div class="industrial-description editable" data-field="industrial-description" onclick="editText(this)"
+             data-en="Industrial Girls Records is more than just a label – it's a movement. Founded by ANDHRAY, we're dedicated to empowering experimental electronic artists and pushing the boundaries of industrial techno. Our mission is to create a platform where innovative sounds meet passionate audiences, fostering a community of artists who dare to explore the darker, more intense realms of electronic music."
+             data-es="Industrial Girls Records es más que solo un sello – es un movimiento. Fundado por ANDHRAY, estamos dedicados a empoderar artistas electrónicos experimentales y empujar los límites del techno industrial. Nuestra misión es crear una plataforma donde sonidos innovadores encuentren audiencias apasionadas, fomentando una comunidad de artistas que se atreven a explorar los reinos más oscuros e intensos de la música electrónica."
+             data-it="Industrial Girls Records è più di un'etichetta – è un movimento. Fondata da ANDHRAY, siamo dedicati a dare potere agli artisti elettronici sperimentali e spingere i confini del techno industriale. La nostra missione è creare una piattaforma dove suoni innovativi incontrano pubblici appassionati, promuovendo una comunità di artisti che osano esplorare i regni più oscuri e intensi della musica elettronica."
+             data-de="Industrial Girls Records ist mehr als nur ein Label – es ist eine Bewegung. Gegründet von ANDHRAY, sind wir dem Empowerment experimenteller elektronischer Künstler gewidmet und erweitern die Grenzen des Industrial Techno. Unsere Mission ist es, eine Plattform zu schaffen, wo innovative Sounds auf leidenschaftliche Zuhörer treffen und eine Gemeinschaft von Künstlern zu fördern, die es wagen, die dunkleren, intensiveren Bereiche der elektronischen Musik zu erkunden."
+             data-pt="Industrial Girls Records é mais do que apenas um selo – é um movimento. Fundada pela ANDHRAY, somos dedicados a empoderar artistas eletrônicos experimentais e empurrar os limites do techno industrial. Nossa missão é criar uma plataforma onde sons inovadores encontram audiências apaixonadas, fomentando uma comunidade de artistas que ousam explorar os territórios mais sombrios e intensos da música eletrônica."
+             data-zh="Industrial Girls Records不仅仅是一个厂牌——它是一个运动。由ANDHRAY创立，我们致力于赋能实验性电子艺术家，推动工业电子的边界。我们的使命是创建一个平台，让创新声音遇见热情的观众，培养一个敢于探索电子音乐更黑暗、更强烈领域的艺术家社区。">
+          Industrial Girls Records is more than just a label – it's a movement. Founded by ANDHRAY, we're dedicated to empowering experimental electronic artists and pushing the boundaries of industrial techno. Our mission is to create a platform where innovative sounds meet passionate audiences, fostering a community of artists who dare to explore the darker, more intense realms of electronic music.
+        </div>
+        <div class="industrial-projects" id="industrialProjects">
+          <!-- Projects will be loaded here -->
+        </div>
+        <div class="edit-indicator">Click to edit</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones Section -->
+  <section class="section" id="milestones">
+    <div class="container">
+      <h2 class="section-title" data-en="Career Milestones" data-es="Hitos de Carrera" data-it="Tappe della Carriera" data-de="Karriere-Meilensteine" data-pt="Marcos da Carreira" data-zh="职业里程碑">Career Milestones</h2>
+      <button class="btn edit-only" onclick="addMilestone()" data-en="Add Milestone" data-es="Agregar Hito" data-it="Aggiungi Tappa" data-de="Meilenstein hinzufügen" data-pt="Adicionar Marco" data-zh="添加里程碑">Add Milestone</button>
+      <div class="milestones-timeline" id="milestonesTimeline">
+        <!-- Milestones will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="section" id="booking">
+    <div class="container">
+      <h2 class="section-title" data-en="Book ANDHRAY" data-es="Reservar ANDHRAY" data-it="Prenota ANDHRAY" data-de="ANDHRAY buchen" data-pt="Reservar ANDHRAY" data-zh="预订ANDHRAY">Book ANDHRAY</h2>
+      <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-en="Full Name *" data-es="Nombre Completo *" data-it="Nome Completo *" data-de="Vollständiger Name *" data-pt="Nome Completo *" data-zh="全名 *">Full Name *</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label data-en="Email *" data-es="Correo Electrónico *" data-it="Email *" data-de="E-Mail *" data-pt="Email *" data-zh="邮箱 *">Email *</label>
+            <input type="email" name="email" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label data-en="Phone Number" data-es="Número de Teléfono" data-it="Numero di Telefono" data-de="Telefonnummer" data-pt="Número de Telefone" data-zh="电话号码">Phone Number</label>
+            <input type="tel" name="phone">
+          </div>
+          <div class="form-group">
+            <label data-en="Country *" data-es="País *" data-it="Paese *" data-de="Land *" data-pt="País *" data-zh="国家 *">Country *</label>
+            <input type="text" name="country" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label data-en="City *" data-es="Ciudad *" data-it="Città *" data-de="Stadt *" data-pt="Cidade *" data-zh="城市 *">City *</label>
+            <input type="text" name="city" required>
+          </div>
+          <div class="form-group">
+            <label data-en="Event Date *" data-es="Fecha del Evento *" data-it="Data Evento *" data-de="Veranstaltungsdatum *" data-pt="Data do Evento *" data-zh="活动日期 *">Event Date *</label>
+            <input type="date" name="date" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label data-en="Event Description *" data-es="Descripción del Evento *" data-it="Descrizione Evento *" data-de="Veranstaltungsbeschreibung *" data-pt="Descrição do Evento *" data-zh="活动描述 *">Event Description *</label>
+          <textarea name="description" rows="5" required placeholder="Tell us about your event, venue, expected attendance, etc."></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" data-en="Submit Booking Request" data-es="Enviar Solicitud de Reserva" data-it="Invia Richiesta Prenotazione" data-de="Buchungsanfrage senden" data-pt="Enviar Solicitação de Reserva" data-zh="提交预订请求">Submit Booking Request</button>
+        
+        <div id="bookingStatus"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Social Media Links -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/andhray_/" target="_blank" class="social-link editable" data-field="social-instagram" onclick="editLink(this)" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://soundcloud.com/andhray" target="_blank" class="social-link editable" data-field="social-soundcloud" onclick="editLink(this)" aria-label="SoundCloud">
+      <i class="fab fa-soundcloud"></i>
+    </a>
+    <a href="https://open.spotify.com/artist/7uu2JnXxaCT7K4AJHocHsT" target="_blank" class="social-link editable" data-field="social-spotify" onclick="editLink(this)" aria-label="Spotify">
+      <i class="fab fa-spotify"></i>
+    </a>
+    <a href="https://it.ra.co/dj/andhray/biography" target="_blank" class="social-link editable" data-field="social-ra" onclick="editLink(this)" aria-label="Resident Advisor">
+      <i class="fas fa-music"></i>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">ANDHRAY</div>
+        <div class="copyright" data-en="© 2025 ANDHRAY. All rights reserved." data-es="© 2025 ANDHRAY. Todos los derechos reservados." data-it="© 2025 ANDHRAY. Tutti i diritti riservati." data-de="© 2025 ANDHRAY. Alle Rechte vorbehalten." data-pt="© 2025 ANDHRAY. Todos os direitos reservados." data-zh="© 2025 ANDHRAY. 版权所有。">
+          © 2025 ANDHRAY. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Panel -->
+  <div class="admin-panel" id="adminPanel">
+    <h3><i class="fas fa-cog"></i> <span data-en="Admin Panel" data-es="Panel de Administrador" data-it="Pannello Admin" data-de="Admin-Panel" data-pt="Painel Admin" data-zh="管理面板">Admin Panel</span></h3>
+    <button onclick="exportData()" class="btn">
+      <i class="fas fa-download"></i> <span data-en="Export Data" data-es="Exportar Datos" data-it="Esporta Dati" data-de="Daten exportieren" data-pt="Exportar Dados" data-zh="导出数据">Export Data</span>
+    </button>
+    <button onclick="importData()" class="btn">
+      <i class="fas fa-upload"></i> <span data-en="Import Data" data-es="Importar Datos" data-it="Importa Dati" data-de="Daten importieren" data-pt="Importar Dados" data-zh="导入数据">Import Data</span>
+    </button>
+    <input type="file" id="importFile" accept=".json" style="display: none;">
+    <button onclick="resetData()" class="btn">
+      <i class="fas fa-trash"></i> <span data-en="Reset Data" data-es="Restablecer Datos" data-it="Ripristina Dati" data-de="Daten zurücksetzen" data-pt="Redefinir Dados" data-zh="重置数据">Reset Data</span>
+    </button>
+    <button onclick="closeAdminPanel()" class="btn">
+      <i class="fas fa-times"></i> <span data-en="Close" data-es="Cerrar" data-it="Chiudi" data-de="Schließen" data-pt="Fechar" data-zh="关闭">Close</span>
+    </button>
+  </div>
+
+  <!-- Modals -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('editModal')">&times;</span>
+      <h3 id="modalTitle">Edit Content</h3>
+      <div id="modalContent"></div>
+      <div style="margin-top: 20px;">
+        <button class="btn btn-primary" onclick="saveEdit()">Save</button>
+        <button class="btn" onclick="closeModal('editModal')">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- File input for image uploads -->
+  <input type="file" id="fileUpload" accept="image/*,video/*" style="display: none;">
+
+  <script>
+    // Global variables
+    let editMode = false;
+    let currentLanguage = 'en';
+    let currentEditElement = null;
+    let siteData = {};
+
+    // Default data structure
+    const defaultData = {
+      news: [
+        {
+          id: 1,
+          type: 'image',
+          title: 'New EP "RITUALS" Out Now',
+          imageUrl: 'https://via.placeholder.com/1200x600/E53935/ffffff?text=RITUALS+EP',
+          linkUrl: '#',
+          linkText: 'LISTEN NOW'
+        },
+        {
+          id: 2,
+          type: 'video',
+          title: 'Live Performance at Industrial Festival',
+          videoUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4',
+          linkUrl: 'https://youtu.be/ScMzIvxBSi4',
+          linkText: 'WATCH FULL SET'
+        },
+        {
+          id: 3,
+          type: 'image',
+          title: 'Industrial Girls Records Launch',
+          imageUrl: 'https://via.placeholder.com/1200x600/FB8C00/000000?text=INDUSTRIAL+GIRLS',
+          linkUrl: '#',
+          linkText: 'EXPLORE LABEL'
+        }
+      ],
+      releases: [
+        {
+          id: 1,
+          title: 'RITUALS EP',
+          date: 'September 2025',
+          imageUrl: 'https://via.placeholder.com/300x200/E53935/ffffff?text=RITUALS'
+        },
+        {
+          id: 2,
+          title: 'FREQUENCIES Single',
+          date: 'October 2025',
+          imageUrl: 'https://via.placeholder.com/300x200/FB8C00/ffffff?text=FREQUENCIES'
+        }
+      ],
+      gallery: [
+        {
+          id: 1,
+          type: 'image',
+          url: 'https://via.placeholder.com/400x400/1a1a1a/FB8C00?text=Photo+1',
+          title: 'Studio Session'
+        },
+        {
+          id: 2,
+          type: 'image',
+          url: 'https://via.placeholder.com/400x400/1a1a1a/E53935?text=Photo+2',
+          title: 'Live Performance'
+        },
+        {
+          id: 3,
+          type: 'video',
+          url: 'https://via.placeholder.com/400x400/1a1a1a/FDD835?text=Video+1',
+          title: 'Behind the Scenes'
+        }
+      ],
+      events: [
+        {
+          id: 1,
+          title: 'Industrial Night Berlin',
+          date: '2025-08-15',
+          location: 'Berghain, Berlin',
+          ticketUrl: '#'
+        },
+        {
+          id: 2,
+          title: 'Techno Underground Festival',
+          date: '2025-09-20',
+          location: 'Amsterdam, Netherlands',
+          ticketUrl: '#'
+        },
+        {
+          id: 3,
+          title: 'ANDHRAY Solo Show',
+          date: '2025-10-10',
+          location: 'Paris, France',
+          ticketUrl: '#'
+        }
+      ],
+      milestones: [
+        {
+          id: 1,
+          year: '2021',
+          text: 'Started producing industrial techno'
+        },
+        {
+          id: 2,
+          year: '2022',
+          text: 'First major festival performance'
+        },
+        {
+          id: 3,
+          year: '2023',
+          text: 'Founded Industrial Girls Records'
+        },
+        {
+          id: 4,
+          year: '2024',
+          text: 'International tour across 10 countries'
+        }
+      ],
+      industrialProjects: [
+        {
+          id: 1,
+          title: 'Label Releases',
+          description: '25+ artists featured'
+        },
+        {
+          id: 2,
+          title: 'Collaborations',
+          description: 'International partnerships'
+        },
+        {
+          id: 3,
+          title: 'Events',
+          description: 'Monthly showcases'
+        }
+      ]
+    };
+
+    // Initialize the website
+    async function init() {
+      siteData = await loadData();
+      renderAllContent();
+      updateLanguage();
+    }
+
+    // Load data from API
+    async function loadData() {
+      try {
+        const [newsRes, releasesRes, galleryRes, eventsRes, milestonesRes, projectsRes] = await Promise.all([
+          fetch('/api/news'),
+          fetch('/api/releases'),
+          fetch('/api/gallery'),
+          fetch('/api/events'),
+          fetch('/api/milestones'),
+          fetch('/api/industrial-projects')
+        ]);
+
+        const [news, releases, gallery, events, milestones, industrialProjects] = await Promise.all([
+          newsRes.json(),
+          releasesRes.json(),
+          galleryRes.json(),
+          eventsRes.json(),
+          milestonesRes.json(),
+          projectsRes.json()
+        ]);
+
+        return {
+          news: news || [],
+          releases: releases || [],
+          gallery: gallery || [],
+          events: events || [],
+          milestones: milestones || [],
+          industrialProjects: industrialProjects || []
+        };
+      } catch (error) {
+        console.error('Error loading data from API:', error);
+        return defaultData;
+      }
+    }
+
+    // Save data through API endpoints (no longer needed as individual operations)
+    function saveData() {
+      console.log('Data automatically saved to database');
+    }
+
+    // Render all content
+    function renderAllContent() {
+      renderNews();
+      renderReleases();
+      renderGallery();
+      renderEvents();
+      renderMilestones();
+      renderIndustrialProjects();
+    }
+
+    // Language system
+    function changeLanguage() {
+      currentLanguage = document.getElementById('languageSelect').value;
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      const elements = document.querySelectorAll('[data-' + currentLanguage + ']');
+      elements.forEach(element => {
+        const text = element.getAttribute('data-' + currentLanguage);
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+          element.placeholder = text;
+        } else {
+          element.textContent = text;
+        }
+      });
+    }
+
+    // Edit mode functions
+    function toggleEditMode() {
+      editMode = !editMode;
+      document.body.classList.toggle('edit-mode', editMode);
+      
+      const button = document.querySelector('.edit-toggle');
+      button.textContent = editMode ? 'Exit Edit' : 'Edit';
+      
+      if (editMode) {
+        document.getElementById('adminPanel').classList.add('open');
+      } else {
+        document.getElementById('adminPanel').classList.remove('open');
+      }
+      
+      renderAllContent();
+    }
+
+    // Text editing
+    function editText(element) {
+      if (!editMode) return;
+      
+      const currentText = element.textContent;
+      const field = element.getAttribute('data-field');
+      
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Edit: ' + field;
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>Text Content</label>
+          <textarea id="editTextArea" rows="5" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">${currentText}</textarea>
+        </div>
+      `;
+      
+      currentEditElement = element;
+      modal.style.display = 'block';
+    }
+
+    // Image editing
+    function editImage(element) {
+      if (!editMode) return;
+      
+      const fileInput = document.getElementById('fileUpload');
+      fileInput.onchange = function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            element.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+      fileInput.click();
+    }
+
+    // Link editing
+    function editLink(element) {
+      if (!editMode) return;
+      
+      const currentHref = element.href;
+      const field = element.getAttribute('data-field');
+      
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Edit Link: ' + field;
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>URL</label>
+          <input type="url" id="editLinkUrl" value="${currentHref}" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+      `;
+      
+      currentEditElement = element;
+      modal.style.display = 'block';
+    }
+
+    // Save edit
+    function saveEdit() {
+      if (!currentEditElement) return;
+      
+      const textArea = document.getElementById('editTextArea');
+      const linkUrl = document.getElementById('editLinkUrl');
+      
+      if (textArea) {
+        currentEditElement.textContent = textArea.value;
+      }
+      
+      if (linkUrl) {
+        currentEditElement.href = linkUrl.value;
+      }
+      
+      closeModal('editModal');
+      currentEditElement = null;
+    }
+
+    // News functions
+    function renderNews() {
+      const grid = document.getElementById('newsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      if (!siteData.news || !Array.isArray(siteData.news)) {
+        siteData.news = [];
+        return;
+      }
+      
+      siteData.news.forEach(item => {
+        const newsItem = document.createElement('div');
+        newsItem.className = 'news-item';
+        
+        if (item.type === 'video') {
+          newsItem.innerHTML = `
+            <iframe class="news-video" src="${item.videoUrl}" frameborder="0" allowfullscreen></iframe>
+            <div class="news-overlay">
+              <div class="news-title">${item.title}</div>
+              <a href="${item.linkUrl}" class="news-link">${item.linkText}</a>
+            </div>
+            ${editMode ? `<button onclick="deleteNews(${item.id})" style="position: absolute; top: 10px; right: 10px; background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Delete</button>` : ''}
+          `;
+        } else {
+          newsItem.innerHTML = `
+            <img class="news-banner" src="${item.imageUrl}" alt="${item.title}">
+            <div class="news-overlay">
+              <div class="news-title">${item.title}</div>
+              <a href="${item.linkUrl}" class="news-link">${item.linkText}</a>
+            </div>
+            ${editMode ? `<button onclick="deleteNews(${item.id})" style="position: absolute; top: 10px; right: 10px; background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Delete</button>` : ''}
+          `;
+        }
+        
+        grid.appendChild(newsItem);
+      });
+    }
+
+    function addNews() {
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Add News Item';
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>Type</label>
+          <select id="newsType" onchange="toggleNewsFields()" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="newsTitle" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group" id="imageUrlGroup">
+          <label>Image URL</label>
+          <input type="url" id="newsImageUrl" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group" id="videoUrlGroup" style="display: none;">
+          <label>Video URL (YouTube embed)</label>
+          <input type="url" id="newsVideoUrl" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Link URL</label>
+          <input type="url" id="newsLinkUrl" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Link Text</label>
+          <input type="text" id="newsLinkText" value="LISTEN NOW" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <button onclick="saveNews()" class="btn btn-primary" style="margin-top: 15px;">Add News Item</button>
+      `;
+      
+      modal.style.display = 'block';
+    }
+
+    function toggleNewsFields() {
+      const type = document.getElementById('newsType').value;
+      const imageGroup = document.getElementById('imageUrlGroup');
+      const videoGroup = document.getElementById('videoUrlGroup');
+      
+      if (type === 'video') {
+        imageGroup.style.display = 'none';
+        videoGroup.style.display = 'block';
+      } else {
+        imageGroup.style.display = 'block';
+        videoGroup.style.display = 'none';
+      }
+    }
+
+    async function saveNews() {
+      const type = document.getElementById('newsType').value;
+      const title = document.getElementById('newsTitle').value;
+      const imageUrl = document.getElementById('newsImageUrl').value;
+      const videoUrl = document.getElementById('newsVideoUrl').value;
+      const linkUrl = document.getElementById('newsLinkUrl').value;
+      const linkText = document.getElementById('newsLinkText').value;
+      
+      if (!title) {
+        alert('Please enter a title');
+        return;
+      }
+      
+      const newItem = {
+        type: type,
+        title: title,
+        url: type === 'video' ? videoUrl : imageUrl,
+        description: `${linkText} - ${linkUrl}`
+      };
+      
+      try {
+        const response = await fetch('/api/news', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newItem)
+        });
+        
+        if (response.ok) {
+          const createdItem = await response.json();
+          // Convert back to display format
+          createdItem.imageUrl = createdItem.type === 'image' ? createdItem.url : '';
+          createdItem.videoUrl = createdItem.type === 'video' ? createdItem.url : '';
+          createdItem.linkUrl = linkUrl;
+          createdItem.linkText = linkText;
+          
+          siteData.news.unshift(createdItem);
+          renderNews();
+          closeModal('editModal');
+        } else {
+          alert('Failed to add news item');
+        }
+      } catch (error) {
+        console.error('Error adding news:', error);
+        alert('Failed to add news item');
+      }
+    }
+
+    async function deleteNews(id) {
+      if (confirm('Delete this news item?')) {
+        try {
+          const response = await fetch(`/api/news/${id}`, {
+            method: 'DELETE'
+          });
+          
+          if (response.ok) {
+            siteData.news = siteData.news.filter(item => item.id !== id);
+            renderNews();
+          } else {
+            alert('Failed to delete news item');
+          }
+        } catch (error) {
+          console.error('Error deleting news:', error);
+          alert('Failed to delete news item');
+        }
+      }
+    }
+
+    // Releases functions
+    function renderReleases() {
+      const grid = document.getElementById('releasesGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      if (!siteData.releases || !Array.isArray(siteData.releases)) {
+        siteData.releases = [];
+        return;
+      }
+      
+      siteData.releases.forEach(item => {
+        const releaseCard = document.createElement('div');
+        releaseCard.className = 'release-card';
+        releaseCard.innerHTML = `
+          <img class="release-image" src="${item.imageUrl}" alt="${item.title}">
+          <div class="release-info">
+            <div class="release-title">${item.title}</div>
+            <div class="release-date">${item.date}</div>
+            ${editMode ? `<button onclick="deleteRelease(${item.id})" style="margin-top: 10px; background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Delete</button>` : ''}
+          </div>
+        `;
+        grid.appendChild(releaseCard);
+      });
+    }
+
+    function addRelease() {
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Add Release';
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="releaseTitle" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="text" id="releaseDate" placeholder="e.g., September 2025" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="url" id="releaseImageUrl" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <button onclick="saveRelease()" class="btn btn-primary" style="margin-top: 15px;">Add Release</button>
+      `;
+      
+      modal.style.display = 'block';
+    }
+
+    function saveRelease() {
+      const title = document.getElementById('releaseTitle').value;
+      const date = document.getElementById('releaseDate').value;
+      const imageUrl = document.getElementById('releaseImageUrl').value;
+      
+      if (!title || !date) {
+        alert('Please fill in all required fields');
+        return;
+      }
+      
+      const newItem = {
+        id: Date.now(),
+        title: title,
+        date: date,
+        imageUrl: imageUrl || 'https://via.placeholder.com/300x200/FB8C00/ffffff?text=' + encodeURIComponent(title)
+      };
+      
+      siteData.releases.push(newItem);
+      saveData();
+      renderReleases();
+      closeModal('editModal');
+    }
+
+    function deleteRelease(id) {
+      if (confirm('Delete this release?')) {
+        siteData.releases = siteData.releases.filter(item => item.id !== id);
+        saveData();
+        renderReleases();
+      }
+    }
+
+    // Gallery functions
+    function renderGallery() {
+      const grid = document.getElementById('galleryGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      if (!siteData.gallery || !Array.isArray(siteData.gallery)) {
+        siteData.gallery = [];
+        return;
+      }
+      
+      siteData.gallery.forEach(item => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        
+        if (item.type === 'video') {
+          galleryItem.innerHTML = `
+            <video class="gallery-video" src="${item.url}" muted loop></video>
+            <div class="gallery-overlay">
+              <button class="download-btn" onclick="downloadFile('${item.url}', '${item.title}')">Download</button>
+              ${editMode ? `<button onclick="deleteGalleryItem(${item.id})" style="background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-left: 10px;">Delete</button>` : ''}
+            </div>
+          `;
+        } else {
+          galleryItem.innerHTML = `
+            <img class="gallery-image" src="${item.url}" alt="${item.title}">
+            <div class="gallery-overlay">
+              <button class="download-btn" onclick="downloadFile('${item.url}', '${item.title}')">Download</button>
+              ${editMode ? `<button onclick="deleteGalleryItem(${item.id})" style="background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-left: 10px;">Delete</button>` : ''}
+            </div>
+          `;
+        }
+        
+        grid.appendChild(galleryItem);
+      });
+    }
+
+    function addGalleryItem() {
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Add Gallery Item';
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>Type</label>
+          <select id="galleryType" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="galleryTitle" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>File URL</label>
+          <input type="url" id="galleryUrl" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <button onclick="saveGalleryItem()" class="btn btn-primary" style="margin-top: 15px;">Add Gallery Item</button>
+      `;
+      
+      modal.style.display = 'block';
+    }
+
+    function saveGalleryItem() {
+      const type = document.getElementById('galleryType').value;
+      const title = document.getElementById('galleryTitle').value;
+      const url = document.getElementById('galleryUrl').value;
+      
+      if (!title || !url) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      const newItem = {
+        id: Date.now(),
+        type: type,
+        title: title,
+        url: url
+      };
+      
+      siteData.gallery.push(newItem);
+      saveData();
+      renderGallery();
+      closeModal('editModal');
+    }
+
+    function deleteGalleryItem(id) {
+      if (confirm('Delete this gallery item?')) {
+        siteData.gallery = siteData.gallery.filter(item => item.id !== id);
+        saveData();
+        renderGallery();
+      }
+    }
+
+    function downloadFile(url, filename) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+    }
+
+    // Events functions
+    function renderEvents() {
+      const list = document.getElementById('eventsList');
+      if (!list) return;
+      list.innerHTML = '';
+      
+      if (!siteData.events || !Array.isArray(siteData.events)) {
+        siteData.events = [];
+        return;
+      }
+      
+      siteData.events.forEach(item => {
+        const eventItem = document.createElement('div');
+        eventItem.className = 'event-item';
+        
+        const eventDate = new Date(item.date);
+        const formattedDate = eventDate.toLocaleDateString('en-US', { 
+          weekday: 'short', 
+          month: 'short', 
+          day: 'numeric',
+          year: 'numeric'
+        });
+        
+        eventItem.innerHTML = `
+          <div class="event-info">
+            <h3>${item.title}</h3>
+            <div class="event-date">${formattedDate}</div>
+            <div class="event-location">${item.location}</div>
+          </div>
+          <div class="event-actions">
+            ${item.ticketUrl ? `<a href="${item.ticketUrl}" class="btn btn-primary">Tickets</a>` : ''}
+            ${editMode ? `<button onclick="deleteEvent(${item.id})" class="btn" style="background: var(--red); border-color: var(--red); color: white;">Delete</button>` : ''}
+          </div>
+        `;
+        
+        list.appendChild(eventItem);
+      });
+    }
+
+    function addEvent() {
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Add Event';
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>Event Title</label>
+          <input type="text" id="eventTitle" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="eventDate" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" id="eventLocation" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Ticket URL (optional)</label>
+          <input type="url" id="eventTicketUrl" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <button onclick="saveEvent()" class="btn btn-primary" style="margin-top: 15px;">Add Event</button>
+      `;
+      
+      modal.style.display = 'block';
+    }
+
+    function saveEvent() {
+      const title = document.getElementById('eventTitle').value;
+      const date = document.getElementById('eventDate').value;
+      const location = document.getElementById('eventLocation').value;
+      const ticketUrl = document.getElementById('eventTicketUrl').value;
+      
+      if (!title || !date || !location) {
+        alert('Please fill in all required fields');
+        return;
+      }
+      
+      const newItem = {
+        id: Date.now(),
+        title: title,
+        date: date,
+        location: location,
+        ticketUrl: ticketUrl
+      };
+      
+      siteData.events.push(newItem);
+      siteData.events.sort((a, b) => new Date(a.date) - new Date(b.date));
+      saveData();
+      renderEvents();
+      closeModal('editModal');
+    }
+
+    function deleteEvent(id) {
+      if (confirm('Delete this event?')) {
+        siteData.events = siteData.events.filter(item => item.id !== id);
+        saveData();
+        renderEvents();
+      }
+    }
+
+    // Milestones functions
+    function renderMilestones() {
+      const timeline = document.getElementById('milestonesTimeline');
+      if (!timeline) return;
+      timeline.innerHTML = '';
+      
+      if (!siteData.milestones || !Array.isArray(siteData.milestones)) {
+        siteData.milestones = [];
+        return;
+      }
+      
+      siteData.milestones.forEach(item => {
+        const milestoneItem = document.createElement('div');
+        milestoneItem.className = 'milestone-item';
+        milestoneItem.innerHTML = `
+          <div class="milestone-year">${item.year}</div>
+          <div class="milestone-text">
+            ${item.text}
+            ${editMode ? `<button onclick="deleteMilestone(${item.id})" style="float: right; background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Delete</button>` : ''}
+          </div>
+        `;
+        timeline.appendChild(milestoneItem);
+      });
+    }
+
+    function addMilestone() {
+      const modal = document.getElementById('editModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      modalTitle.textContent = 'Add Milestone';
+      modalContent.innerHTML = `
+        <div class="form-group">
+          <label>Year</label>
+          <input type="text" id="milestoneYear" placeholder="e.g., 2025" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="milestoneText" rows="3" style="width: 100%; padding: 10px; background: var(--dark); color: var(--white); border: 2px solid var(--orange); border-radius: 5px;"></textarea>
+        </div>
+        <button onclick="saveMilestone()" class="btn btn-primary" style="margin-top: 15px;">Add Milestone</button>
+      `;
+      
+      modal.style.display = 'block';
+    }
+
+    function saveMilestone() {
+      const year = document.getElementById('milestoneYear').value;
+      const text = document.getElementById('milestoneText').value;
+      
+      if (!year || !text) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      const newItem = {
+        id: Date.now(),
+        year: year,
+        text: text
+      };
+      
+      siteData.milestones.push(newItem);
+      siteData.milestones.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+      saveData();
+      renderMilestones();
+      closeModal('editModal');
+    }
+
+    function deleteMilestone(id) {
+      if (confirm('Delete this milestone?')) {
+        siteData.milestones = siteData.milestones.filter(item => item.id !== id);
+        saveData();
+        renderMilestones();
+      }
+    }
+
+    // Industrial Projects functions
+    function renderIndustrialProjects() {
+      const container = document.getElementById('industrialProjects');
+      if (!container) return;
+      container.innerHTML = '';
+      
+      if (!siteData.industrialProjects || !Array.isArray(siteData.industrialProjects)) {
+        siteData.industrialProjects = [];
+        return;
+      }
+      
+      siteData.industrialProjects.forEach(item => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.innerHTML = `
+          <div class="project-title">${item.title}</div>
+          <div>${item.description}</div>
+          ${editMode ? `<button onclick="deleteProject(${item.id})" style="margin-top: 10px; background: var(--red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Delete</button>` : ''}
+        `;
+        container.appendChild(projectCard);
+      });
+    }
+
+    function deleteProject(id) {
+      if (confirm('Delete this project?')) {
+        siteData.industrialProjects = siteData.industrialProjects.filter(item => item.id !== id);
+        saveData();
+        renderIndustrialProjects();
+      }
+    }
+
+    // Booking form
+    function submitBooking(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(event.target);
+      const bookingData = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        country: formData.get('country'),
+        city: formData.get('city'),
+        date: formData.get('date'),
+        description: formData.get('description'),
+        timestamp: new Date().toISOString()
+      };
+      
+      // Save booking to localStorage (in real app, send to server)
+      const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+      bookings.push(bookingData);
+      localStorage.setItem('bookings', JSON.stringify(bookings));
+      
+      // Show success message
+      const status = document.getElementById('bookingStatus');
+      status.innerHTML = '<div style="color: var(--yellow); font-weight: 600; margin-top: 15px;">Booking request submitted successfully! We\'ll get back to you soon.</div>';
+      
+      // Reset form
+      event.target.reset();
+      
+      // Here you would typically send data to your booking system
+      console.log('Booking submitted:', bookingData);
+    }
+
+    // Utility functions
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      currentEditElement = null;
+    }
+
+    function closeAdminPanel() {
+      document.getElementById('adminPanel').classList.remove('open');
+    }
+
+    // Data management
+    function exportData() {
+      const dataStr = JSON.stringify(siteData, null, 2);
+      const dataBlob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(dataBlob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'andhray-website-data.json';
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importData() {
+      document.getElementById('importFile').click();
+    }
+
+    document.getElementById('importFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          try {
+            siteData = JSON.parse(e.target.result);
+            saveData();
+            renderAllContent();
+            alert('Data imported successfully!');
+          } catch (error) {
+            alert('Error importing data. Please check the file format.');
+          }
+        };
+        reader.readAsText(file);
+      }
+    });
+
+    function resetData() {
+      if (confirm('This will reset all data to defaults. Are you sure?')) {
+        siteData = JSON.parse(JSON.stringify(defaultData));
+        saveData();
+        renderAllContent();
+        alert('Data reset successfully!');
+      }
+    }
+
+    // Event listeners
+    window.addEventListener('click', function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('a[href^="#"]')) {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', init);
+
+    // Animation on scroll (simple version)
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+Create a full, modern, and responsive artist website for a music performer named **Andhray**. All code must be placed inside a single file named `index.html`. Use clean HTML5, embedded CSS (inside <style>), and JavaScript (inside <script>). Do not use external CSS or JS files. All styles, scripts, and content must be in the same file.
+
+Take strong inspiration from https://amelielens.com/ in terms of structure, layout, and design style. The final result should feel premium, minimalist, and visually professional.
+
+The website must include the following key features:
+
+1. **Biography Section** – A stylish section introducing Andhray and her background as a music artist.
+
+2. **Upcoming Music Releases** – Display a list or card-style layout of upcoming tracks, albums, or EPs.
+
+3. **Featured Videos** – A gallery or section that embeds important music videos or live performances.
+
+4. **Photo and Video Gallery** – A grid-based downloadable gallery of high-resolution images and videos.
+
+5. **Upcoming Events** – A section that shows future concerts or performances, with:
+   - Event name
+   - Date and location
+   - Ticket link for each event
+
+6. **Editable Links Area** – A section that allows the artist or admin to easily update/add external links (to music platforms, interviews, or partners).
+
+7. **Important Milestones** – Timeline or highlighted events that showcase career achievements.
+
+8. **Social Media Integration** – Include visible, stylish icons linking to Andhray’s social platforms (Instagram, YouTube, TikTok, Spotify, etc.).
+
+9. **Booking Request Form** – A fully functional automated booking section where visitors can:
+   - Select a desired event date via calendar picker
+   - Submit their:
+     - Full name
+     - Email address
+     - Phone number
+     - Country
+     - City where the event will be held
+     - Event proposal or description
+
+   Upon submission, the form should notify booking agents for follow-up. No backend is required, but provide placeholders for future integration (e.g., with Google Sheets or APIs).
+
+10. **Multilingual Support** – The entire website must be translatable into:
+   - English
+   - Spanish
+   - Italian
+   - German
+   - Portuguese
+   - Chinese (Simplified)
+
+   Include a language switcher dropdown in the top-right corner, and allow automatic switching of all visible text. Use a lightweight JS solution or provide inline translation logic using data attributes.
+
+11. **Project Section: “Industrial Girls”** – Add a dedicated section for Andhray’s record label *Industrial Girls*:
+   - Brief description and mission
+   - Showcase of associated projects, releases, or collaborators
+   - Embed any related videos or social links
+
+12. **AI-Powered Automation (structure only)** – Include placeholders or basic automation logic for:
+   - Capturing user data (with consent)
+   - Sending email updates for new music releases
+   - Preparing collected data for advertising segmentation
+
+13. **Color Palette** – Use the following brand colors:
+   - **Red** (#E53935) – primary action buttons and highlights
+   - **Orange** (#FB8C00) – accents and interactive elements
+   - **Yellow** (#FDD835) – emphasis and hover states
+   - **White** (#FFFFFF) – background and clean space
+
+14. **Responsive Design** – The entire page must look perfect on both desktop and mobile. Use flexbox/grid layouts, modern fonts (like Poppins or Roboto), and smooth animations.
+
+15. **Accessibility & SEO** – Use semantic HTML, proper <meta> tags, descriptive alt text, and a responsive layout for optimal accessibility and search engine visibility.
+
+16. **Editable & Expandable** – Structure the HTML and JS code so it can be easily updated by the artist or team. Add placeholder comments where images, videos, and PDFs will be added later.
+
+Generate the complete `index.html` file now with all structure, styles, and logic included. Do not include any additional files or README. Everything must be self-contained and ready to preview.
